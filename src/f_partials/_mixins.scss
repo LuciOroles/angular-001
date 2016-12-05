@@ -1,0 +1,29 @@
+@mixin warning {
+    background-color: rgba(12,169,225,0.64);
+    color: white;
+    &:hover {
+     background-color: lighten(orange, 10%);   
+    }
+}
+
+@mixin first-theme {
+		@if $theme == first {
+			@content;
+		}
+}
+
+
+@mixin second-theme {
+		@if $theme == second {
+			@content;
+		}
+}
+
+@mixin theHidden {
+	display :none;
+}
+
+@mixin simpleBox {
+	width: 8em;
+	height: 4em
+}

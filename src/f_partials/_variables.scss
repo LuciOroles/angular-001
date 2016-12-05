@@ -1,0 +1,10 @@
+$color-one : #00ffff;
+$color-two : #d65c4a;
+$class-border : 3px;
+$h1-color : lightgray;
+$theme : first;
+
+@if theme == second {
+	$color-one : #ecb86b;
+	$color-two : #49d8cb;
+}

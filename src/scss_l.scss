@@ -1,0 +1,232 @@
+
+@import 'partials/functions';
+@import 'partials/variables';
+@import 'partials/mixins';
+
+@include fancy-links;
+
+@include google-font("Alegreya+Sans");
+@include google-font("Titillium+Web");
+
+
+
+/* there are extend only selectors  - not generate for an */
+
+%hightlight {
+	font-style: italic;
+	font-size: em(22px);
+}
+
+
+@for $i from 10 through 16 {
+	.x-col-#{$i} {
+		width:  $i * 2em;
+	}
+}
+
+$speakers : romica, maimuta, salam;
+
+@each $speaker in $speakers{
+	.#{$speaker}-profile {
+		background-image: url ('/img/#{$speaker}.png');
+	} 
+}
+
+$font-sizes: (tiny : 6px, small: 11px, medium : 13px, large : 20px); // this structure is called MAP
+@each $name, $size in $font-sizes {
+	.#{$name} {
+		font-size:  $size;
+	}
+}
+
+$k : 0;
+
+@while $k<13 {
+	.picture-#{$k} {
+		width:  20px * $k;
+	}
+	$k : $k+ 3;
+}
+
+body {
+	background-color: #eee;
+	@if $contrast == high {
+		color: darkblue;
+	} @else if $contrast == low {
+		color: yellow;
+	} @else {
+		color: $text-color;	
+	}
+	
+	font-family: $headline-font;
+ 	p {
+		color: #008;
+	}
+	h1, h2, h3 {
+		color: #444;
+		font-family: $headline-font;
+	}
+	h2 {
+		@include large-text;
+		@extend %hightlight;
+	}
+	p {
+	font-family: $text-font;
+	}
+	.thumbnail {
+		height: $header-height;
+	}
+	.row {
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		
+		.column {
+			width: 25%;
+			display: inline-block;
+		}
+		.thumbnail {
+			height:  $thu-height;
+		} 
+	}
+}
+
+a {
+	color: $link-color;
+}
+
+.off-canvas {
+	background-color: $theme-color;
+	h5, p {
+		color : #eee;
+		&:hover {
+			color : darken(#eee, 15%);
+		}
+	}
+
+}
+.menu {
+	li {
+		display: inline;
+	}
+	a {
+		color: $menu-item-color;
+		padding: 6px 8px;
+		border-bottom:  1px solid trasparentize(#fefefe,1);
+		transition : border-bottom .5s;
+		transition-timing-function : ease-in-out;
+		&:hover {
+			border-bottom: 1px solid opacify(#fefefe, .5);
+		}
+	}
+
+}
+.off-canvas-wrapper  {
+	@include box;
+	width: $content-width;
+ 		@include large-screens {
+				width: auto;
+				max-width: $content-width;
+		font-size : 1.5em;
+		text-decoration: underline;
+	}
+	@include nonne;
+ }
+
+.medium-6.columns {
+	background-color: $secondary-color;
+	height: $footer-height;
+	@include large-screens {
+		height: $footer-height*1.5;
+	}
+}
+.warning-button {
+	@include warning;
+	padding: 8px 12px;
+	@include box ( $border: 4px solid #eee, $radius : 20px);
+	@include box-shadow(inset 0 0 5px #2184e4);
+}
+
+#nony {
+	@include nonne;
+}
+
+.shadow-test {
+	width: 90px;
+	height: auto;
+	padding-right: 2em;
+	@include box-shadow(2px 1px 2px 0 $secondary-color, -2px 1px 2px 0 #2184e4);
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
+
+p.lead {
+	font-size: em(24px);
+}
+
+.three-cols{
+	background-color: $last-col-color;
+	color  : $last-col-color-text;
+	height: $last-col;
+	width: $col;
+	
+	@include table-cell;
+	@include two-em-border-white;
+		// float: left;
+	@include client-gigi {
+		border-left-color:   black;
+	}	
+}
+
+.error {
+
+	background-color:  #eef;
+	color :#88eeff;
+	border : 2px solid #aaa;
+}
+
+
+.critical-error {
+	@extend .error;
+	font-weight: 700;
+	border-width:  4px;
+}
+
+.v-green.v-two {
+	color : green;
+}
+
+.v-two {
+	font-size: 2em;
+	text-indent: 2em;
+}
+
+.green-two-borderd {
+	@extend .v-green.v-two; // extend that contain multiple clases, etc but must be define above as such
+	@extend .v-two; //multiple extends 
+	border : 2px solid black;
+}
+
+
+.green-two-et2 {
+	@extend .green-two-borderd;
+	font-size: 0.8em;
+
+}
+
+.tree-container {
+	@include table-con;
+
+	@include client-bacu {
+		border-bottom: 2px solid black;
+	}
+
+
+	@include client-gigi {
+		border-bottom: 3px dotted black;
+	}
+
+}

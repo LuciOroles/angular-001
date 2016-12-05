@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Directives X3 Explained</title>
+</head>
+<body ng-controller="myCtrl">
+
+	<div  class="row" ng-controller="gitCtrl">
+		{{gitResult}}
+		
+	</div>
+		
+
+<div id="worked_hide">	
+ <div class="row">
+ 	<div class="small-6 columns">
+ 		{{surname}}
+ 		<custom-render ng-model="surname"></custom-render>
+ 	</div>
+ </div>		
+
+
+	<div class="row">
+		<!-- parent child comunication on angular js -->
+		<div com-par-dir>
+			
+			<div com-child-dir sib-child-dir></div>
+			
+		</div>
+
+	</div>
+
+	<div class="row">
+		<div sidebox title = " :Link:Transclude">
+			<ul>
+				<li>My item</li>
+				<li>Zaza Item</li>
+				<li>Skin Item</li>
+			</ul>
+		</div>
+
+		<div sidebox title= "Footbal">
+			<h6>Liverpool FCCC</h6>
+			<h6> FCCC</h6>
+			<h6>BVC</h6>
+		</div>
+
+	</div>
+
+
+	<div class="row">
+		<div ng-init="somP='some data'">
+			<div ng-init="siP='more data'">
+				Inside Div 2 {{ aThird }}	
+				<div ng-init="aThird='data for third 3!'" ng-controller="thrCtrl">	
+					Inside div 3 {{aThird}}
+				<div ng-init="aForth">
+					Inside div 4 {{aThird}}
+					<div ng-controller="forthCtrl" >
+					<!-- daca nu uparscriu valoarea in controller ca mai jos
+					ng-init="sccA='sccA from 4thCtrl'"
+					atuntci sccA va fi vizila din controller, cu conditia ca scope: true -->
+						Inside div 4thCtrl {{aThird}}
+						<hr>
+
+						scope outSide custom dir :{{sccA}}
+						<div ssc-directive ng-init="sccA='sccA ssc Directive'" >
+							scope inside custom directive {{sccA}} &nbsp; {{aThird}}
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<level-one>
+			<level-two>
+				<level-three>
+					{{myValue}}
+				</level-three>
+			</level-two>
+		</level-one>
+	</div>
+
+
+	<div class="row">
+		<div class="large-6 columns">
+			<form name="sg_f" ng-submit ="submitF()" novalidate="" >
+			 <div ng-repeat="field in sg.fields">
+			 	<input type="text" name="{{field.name}}" ng-model="field.model" ng-required="field.isRequired" placeholder="{{field.placeholder}}" >
+			 	<div ng-show="sg_f.{{field.name}}.$dirty">
+			 		I'm dirty
+			 	</div>
+			 </div>
+				
+			</form>
+		</div>
+		<div class="large-6 columns">
+
+			<input type="number" ng-model="equation.x" ng-change="Eqchange()"/>
+			<code ng-cloak> {{equation.output}}</code>
+		</div>
+
+	</div>
+	<div class="row">
+		<div class="large-12 columns">{{myValue}}</div>
+		<div class="large-6 columns">
+			<input type="text" ng-model="myUrl"/>
+		</div>
+		<div class="large-6 columns">
+		<div sam-y  my-url="{{myUrl}}"  my-text="{{1+2}}" my-url2= "Pernambuco"></div>
+		
+			<hr>
+			<div class="large-6 columns"><input type="text" ng-model="tmyUrl"></div>
+			<div class="large-6 columns end">
+				<div sam-y2 top-input="tmyUrl"  my-text={{90/33}} ></div>
+
+			</div>
+			
+
+		</div>
+		<div class="row">
+			<div class="large-3 columns">
+				<input type="text" ng-model="samy3" placeholder="Type to enagbe">
+				<button class="button" ng-disabled="!samy3"> Samy3 </button>
+				<textarea ng-disabled="taDis"></textarea>
+				<input type="text" ng-readonly="!samy3" value="readonly">
+				<label> theChecked: {{theChecked}}</label>
+				<input type="checkbox" ng-checked="theChecked" ng-init="theChecked=true" ng-model="theChecked">
+			</div>
+			<div class="large-3 columns">
+			<h1 ng-if="2+2 ===5"> You don't see me in the DOM </h1>
+			<h6 ng-if="2+2 ===4"> See me in the DOM[ng-if true] </h6>
+			</div>
+			<div class="large-3 columns">
+				<ul>
+					<li ng-repeat="user in users" ng-class="{even_list: !$even, odd_list: !$odd}" >{{user.name}}</li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+</div><!-- worked hide  -->
+<script type="text/javascript" src="directiveC2.js"></script>	
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Drive 68 - MetaCritiq</title>
+ 
+</head>
+
+<body>
+
+    <body ng-app="myApp">
+ 		<div class="redSquare"></div>
+        <div id="bgeffect">
+            <!-- Background effect dummy -->
+        </div>
+        <div id="bg">
+            <!-- Content background dummy -->
+        </div>
+        <div id="header" class="hdr-ftr hdr">
+            <div class="hdr-ftr-inner">
+                <div class="hdr-ftr-inner-left">GfK</div>
+                <div class="hdr-ftr-inner-right"></div>
+            </div>
+        </div>
+ 
+        <div id="wrapper" ng-controller="theControler">
+            <div id="topbox">
+            
+                <div id="logo">
+                    <!-- logo -->
+                </div>
+                <div id="customerlogo">
+                    <!-- customer logo -->
+                </div>
+                <div id="progress">
+                    <div id="progresstext">Survey progress:</div>
+                    <div id="progresscount">0%</div>
+                    <canvas id="progresscanvas" width="75px" height="36px">
+                        <!-- color fade progress -->
+                    </canvas>
+                </div>
+            </div>
+            <div class="spacer">
+                <!-- Spacer with 1px line and 30px margin/padding an top and bottom -->
+            </div>
+			<div id="test1"></div>
+
+            <div id="content">
+                <form id="Questionnaire" enctype="multipart/form-data" method="POST" onsubmit="return SubmitHandler()">
+                    <div class="question">
+                        <div class="Question_Group" id="Question_Group">
+                            <table class="group" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td>
+                                        <!-- begin Text Question -->
+                                        <div class="Question_Text" id="Question_Text">
+                                            <p class="QuestionDescription">
+                                                <h1>1</h1> Duo doming virtute eu. Audire virtute fabellas ius ea, repudiandae reprehendunt pri an. Eum ea tempor quaeque. Per sonet solet persius an, his labore utroque assentior at. Id duo exerci maluisset delicatissimi. Duo in viris inciderint. Dicant delicata ex qui, ea has reque novum numquam.
+                                            </p>
+     
+                                            <div id="questions">
+                                                <input type="hidden" name="Answers[OG_1]" id="Answers[OG_1][HIDDEN]" value="99999999" />
+                                                <input type="text" name="Answers[OG_1]" id="Answers[OG_1]" maxlength="50" value=""  />
+                                            </div>
+                                        </div>
+                                        <!-- end Text Question -->
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <!-- begin Text Question -->
+                                        <div class="Question_Text" id="Question_Text">
+                                            <p class="QuestionDescription">
+                                                <h1>2</h1> Duo doming virtute eu. Audire virtute fabellas ius ea, repudiandae reprehendunt pri an. Eum ea tempor quaeque. Per sonet solet persius an, his labore utroque assentior at. Id duo exerci maluisset delicatissimi. Duo in viris inciderint. Dicant delicata ex qui, ea has reque novum numquam.
+                                            </p>
+ 
+                                            <div id="questions">
+                                                <input type="hidden" name="Answers[OG_2]" id="Answers[OG_2][HIDDEN]" value="99999999" />
+                                                <input type="text" name="Answers[OG_2]" id="Answers[OG_2]" maxlength="50" value="" onKeyDown="return DisallowEnterKey(event);" onkeypress="return DisallowEnterKey(event);" />
+                                            </div>
+                                        </div>
+                                        <!-- end Text Question -->
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <!-- begin Text Question -->
+                                        <div class="Question_Text" id="Question_Text">
+                                            <p class="QuestionDescription">
+                                                <h1>3</h1> Duo doming virtute eu. Audire virtute fabellas ius ea, repudiandae reprehendunt pri an. Eum ea tempor quaeque. Per sonet solet persius an, his labore utroque assentior at. Id duo exerci maluisset delicatissimi. Duo in viris inciderint. Dicant delicata ex qui, ea has reque novum numquam.
+                                            </p>
+                                            <div id="questions">
+                                                <input type="hidden" name="Answers[OG_3]" id="Answers[OG_3][HIDDEN]" value="99999999" />
+                                                <input type="text" name="Answers[OG_3]" id="Answers[OG_3]" maxlength="50" value="" onKeyDown="return DisallowEnterKey(event);" onkeypress="return DisallowEnterKey(event);" />
+                                            </div>
+                                        </div>
+                                        <!-- end Text Question -->
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!-- end Group Question -->
+                    </div>
+                    <div class="spacer">
+                        <!-- Spacer with 1px line and 30px margin/padding an top and bottom -->
+                    </div>
+                    <div class="navigation">
+                        <div class="innernav">
+                            <input type='hidden' name='PageNr' id='PageNr' value='1' />
+                            <input type='hidden' id='Submit' value='NEXT' />
+                            <!-- The code below has been modified by Anton Yankov to use '>>' for the forward button and '<<' for the back button -->
+                            <!-- ORIGINAL CODE -->
+                            <!--
+                <input  type="submit" id="button_Next" name="Submit[NEXT]" value="Next" onclick="document.getElementById('Submit').value = 'NEXT';" />
+                 -->
+                            <!-- END ORIGINAL CODE -->
+                            <input type="submit" id="button_Next" name="Submit[NEXT]" value=">>" onclick="document.getElementById('Submit').value = 'NEXT';" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- <div id="navigation">
+      <div class="innernav"><input id="backbutton" type="button" value="Back" /><input id="forwardbutton" type="button" value="Next" /></div>
+    </div> -->
+            <div class="safarichromehack">
+                <!-- Hack for margin-bottom issue in Safari and Chrome -->
+            </div>
+        </div>
+    </body>
+    <script src="./drive1.js"></script>
+</body>
+
+</html>

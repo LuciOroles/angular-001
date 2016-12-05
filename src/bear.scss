@@ -1,0 +1,236 @@
+$color : 333;
+
+div {
+    color: lightblue;
+    font-size: 24px;
+}
+
+.box {
+    position: relative;
+    background-color: #abc;
+    width: 45px;
+    height: 45px;
+    float: left;
+    margin: 5px;
+    cursor: pointer;
+}
+
+table {
+    /*border: 2px solid red;*/
+}
+
+table td {
+    /*border: 2px solid red;*/
+}
+
+.c_instr {
+    background-color: gray;
+    width: 180px;
+}
+
+.c_item {
+    width: 200px;
+}
+
+#c_table .c_item {
+    text-align: center;
+    vertical-align: middle;
+}
+
+#c_table {
+    border-collapse: collapse;
+}
+
+.c_bottom {
+    height: 2em;
+}
+
+#logo_c {
+    display: table;
+}
+
+#logo {
+    /*background: url("/64_64_arch.jpg") no-repeat;*/
+    width: 64px;
+    height: 64px;
+    display: table-cell;
+    vertical-align: middle;
+    text-indent: -9999px;
+}
+
+#logo_wrapper {
+    display: inline-block;
+    width: 90%;
+    margin: auto;
+}
+
+#logo_wrapper div {
+    display: inline-block;
+}
+
+.logo_input {
+    width: 2.5em;
+    background: transparent;
+    color: #AFB5BB;
+    font-size: 0.755em;
+    padding: 10px 0;
+    border-bottom: solid 1px $color;
+    transition: all 0.3s cubic-bezier(.64, .09, .08, 1);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, $color 4%);
+    background-position: -200px 0;
+    background-size: 200px 100%;
+    padding-bottom: 0.2em;
+}
+
+#logo_c>h1 {
+    display: table;
+}
+
+.i_container {
+/*	border :1px solid rgb(0,0,0); */
+	width: 100%;
+	display: inline-block;
+ }
+.text_placeholder {
+	width: 70%;
+	margin:2%;
+	float :left;
+	box-sizing: content-box;
+    background: orange;
+    color :white;
+    padding: 0 0 1em 1em;
+    border-radius: 2em;
+    padding-top: 0.5em;
+    padding-right: 0.5em;
+}
+
+.text_placeholder>h1 {
+    display: none;
+}
+
+.number_placeholder {
+	margin:2%;
+	width: 15%;
+	margin: none;
+	float: left;
+    padding-top: 0.5em;
+    text-align: center;
+
+}
+
+#total_sum {
+	font-size: 1.4em;
+	width: 28%;
+	float: right;
+    border :none;
+    border-radius: 1.2em;
+    padding : 0.2em 0 0.2em 0;
+
+}
+
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 1.12em;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  border:  2px solid gray;
+  margin-top :0.5em;
+  margin-left: 0.5em;
+  margin-bottom: 0.2em;
+}
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.btn:hover,
+.btn:focus,
+.btn.focus {
+  color: #333;
+  text-decoration: none;
+}
+.btn:active,
+.btn.active {
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+          box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+
+.btn-visible {
+    background-color: white;
+    color:green;
+}
+
+.btn-hidden {
+    background-color: black;
+    color:white;
+    text-align: center;
+}
+
+.item_container {
+    
+    transition:all 0.5s ease-in-out;
+    transform: translateY(0);
+}
+
+.item_container.ng-hide {
+    transform: translateY(-100%);
+}
+
+.group_sum {
+    width: 100%;
+    color: black;
+    text-align: center;
+    box-sizing: content-box;
+    
+    
+ }
+
+ .container {
+    min-width: 480px !important;
+ }
+
+ @media (max-width: 720px) { 
+    .text_placeholder {
+       font-size: 0.85em;
+       width: 60%;
+       padding: 0.2em;
+       border-radius: 0em;
+
+    }
+    .number_placeholder {
+        width: 20%;
+        font-size: 0.9em;
+    }
+
+  }
+
+
+  .redSquare {
+    width: 200px;
+    height: 200px;
+    background-color:  red;
+  }
+
+
+  /*drive play here */

@@ -1,0 +1,27 @@
+$odd-color : #bd1a1a;
+$even-color :#097163;
+
+.odd_list {
+	list-style-type: decimal-leading-zero;
+	background-color: $odd-color;	
+}
+
+.even_list {
+	background-color: $even-color;
+}
+
+.odd  {
+	background-color: $odd-color;		
+}
+
+.t_content {
+	background-color: gray;
+}
+
+.header {
+	color : $even-color;
+}
+
+#worked_hide {
+	display:  none;
+}

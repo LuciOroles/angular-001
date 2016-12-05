@@ -1,0 +1,276 @@
+@import 'f_partials/mixins';
+@import 'f_partials/variables';
+
+
+p:first-of-type {
+	@include warning;
+	margin-left: 1em;
+}
+
+.medium-up-3>.column:nth-last-child(3n-1){
+	border: 2px solid black;
+}
+li:last-of-type {
+	border: 2px solid green;
+}
+
+
+
+.One, .Two {
+
+		@include first-theme {
+			background-color: $color-one;
+		}
+
+		@include second-theme {
+			border-color: $color-one;
+			background-color: $color-two;
+			border-style: solid;
+			border-width: $class-border;
+		}
+}
+
+.Two  {
+
+		@include first-theme {
+			background-color: $color-two;
+		}
+
+}
+
+.container {
+	display: inline-block;
+	width : 150px;
+}
+
+.h1 {
+	color: $h1-color;
+	font-size:  20px;
+	font-weight: 200;
+	padding: 20px;
+	text-align: center;
+}
+
+.box {
+	border-radius: 50%;
+	height:  40px;
+	margin: 50px auto;
+	width: 40px;
+	&:hover {
+		transform : scale(2);
+	}
+	background-color: $color-one;
+}
+
+.box1 {
+  background: #60D4C8;
+  transition: all 300ms;
+  transition-timing-function : ease-in-out;
+}
+
+.box2 {
+  background: #46BAAF;
+  transition: all 1s;
+}
+
+.box3 {
+  background: #3EA69B;
+  transition: all 3s;
+  transition-timing-function : ease-in-out;
+}
+
+
+.circle {
+	border-radius: 50%;
+	height: 30px;
+	width: 30px;
+	margin:10px;
+	#circle-move-200:hover &{
+		transform : translateX(200px);
+	}
+}
+
+#circle-move-200 {
+	display: block;
+}
+
+.circle0 {
+  @extend .circle;
+  background: PaleTurquoise;
+  transition: all 1.5s linear;
+} 
+
+.circle1 {
+  @extend .circle;
+  background: salmon;
+  transition: all 1.5s ease;
+}
+
+.circle2 {
+   @extend .circle;
+  background: lightskyblue;
+  transition: all 1.5s ease-in;
+}
+
+.circle3 {
+  @extend .circle;
+  background: khaki;
+  transition: all 1.5s ease-out;
+  transition-delay : 1s;
+}
+
+.circle4 {
+  @extend .circle;
+  background: mediumturquoise;
+  transition: all 1.5s ease-in-out;
+}
+
+.circle5 {
+  @extend .circle;
+  background: thistle;
+  transition: all 1.5s cubic-bezier(0,1,.98,0); 
+}
+
+.topCol {
+ @include theHidden
+}
+
+.e6_b {
+ 
+	width:  15rem;
+	height: 4rem;
+    background-image:  -webkit-gradient(linear, left center, right center, from(white), to(black));
+    &:hover {
+    	transform : scale(0.5, 0.5);
+    	transition: all 1.5s ease-in-out;
+    }
+}
+
+.e6_b1 {
+ 
+	width:  15rem;
+	height: 4rem;
+    background-image:  -webkit-gradient(linear, 50% 90%, 50% 0%, from(white), to(black));
+
+    &:hover{
+    	transform:	skewX(20deg) rotate(20deg);	
+ 
+    	transition : all 2s ease-out;
+    }
+}
+
+.e6_b_radial{
+ 
+	width:  10rem;
+	height: 4rem;
+    background-image:  -webkit-gradient(radial, 50% 90%, 10 ,50% 0%, 70 ,from(white), to(black));
+ 	&:hover {
+	 	transform : rotate(-25deg) translate(2em, 2em) ;
+	    transform-origin : top right;
+	    transition: all 1.5s ease-in-out;
+ 	}	
+
+}
+
+#box_reflect {
+ @extend .e6_b;
+	///-webkit-box-reflect: below;	
+	background-color: #fff;
+
+}
+
+
+
+
+#box_trans2 {
+	@include simpleBox;
+	border-width:  1px;
+	border-style: double;
+	border-color:  red;
+	margin-left: 2rem;
+	text-align: right;
+	&:hover{
+		border-width:  3px;
+		margin-left: 4rem;
+		transition-property : border-width, margin-left ;
+ 		transition-duration : 2s, 3s;	
+	}
+	
+}
+
+.experiment {
+	display: inline;
+}
+
+h1 {
+	font-size: 2.9rem;
+	transition-property : font-size;
+	transition-duration : 3s;
+	transition-timing-function: cubic-bezier(0.6, 0.1, 0.15, 0.8);
+	transition-delay : -1s;
+}
+
+#e_trans {
+	text-decoration: underline;
+
+}
+
+@keyframes 'expand' {
+	from {
+		border-width: 10px;
+	}
+	50% {
+		border-width: 1px;
+	}
+	to {
+ 		border-width: 1px;
+		height: 5rem;
+		background-image:  -webkit-gradient(linear, left center, right center, from(white), to(black));
+ 	}
+
+}
+
+
+
+#box_trans {
+	@include simpleBox;
+	background-color: lightblue;
+	transition : background-color 2s;
+	&:hover {
+		background-color: #fff;
+	}
+		&:target {
+		border: 2px solid green;
+	}
+
+}
+
+#box_trans {
+	animation-name : 'expand';
+	animation-duration :3s;
+	animation-iteration-count:2;
+	animation-play-state : running;
+}
+
+
+@-webkit-keyframes 'expand' {
+ 	0% { border-width: 4px; }
+	50% { border-width: 12px; }
+	 100% {
+border-width: 4px;
+height: 130px;
+width: 150px;
+}
+}
+
+
+#bew {
+border: 4px solid black;
+height: 100px;
+width: 100px;
+box-sizing: border-box;
+ -webkit-animation-name: expand;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: 10;
+
+}

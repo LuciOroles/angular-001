@@ -1,4 +1,5 @@
 /* Script dependencies */
+
 var React = require('react');
 var GreenBox = require('./components/green-box/green-box');
 var BlueBox = require('./components/blue-box/blue-box');
@@ -14,5 +15,6 @@ var app = (
 );
 
 window.onload = function() {
+	console.log("onloadc");
     React.render(app, document.getElementById("app"));
 };

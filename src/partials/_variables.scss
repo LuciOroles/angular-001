@@ -1,0 +1,47 @@
+// --------colors
+$text-color: #222222;
+$header-height : 80px;
+$theme-color : #170a48;
+$secondary-color :#f27731;
+$ternary-color: #ccf962;
+$link-color : $secondary-color;
+$menu-item-color : white;
+
+// theme could be dark/light and timber;
+
+$theme : dark;
+
+$last-col-color : #4444d2;
+$last-col-color-text : #353535;
+$two-em-border-c : white;
+
+@if $theme == light {
+	$last-col-color : white;
+	$last-col-color-text : blue;
+	$two-em-border-c : #a9a9a9;
+}@else if $theme == timber {
+	$last-col-color : #e68722;
+	$last-col-color-text : #791e02;
+	$two-em-border-c : #e69be6;
+ }
+
+
+
+// --------font
+$text-font: "Alegreya Sans", Verdana;
+$headline-font : "Titillium Web", Gerogia, serif;
+
+// --------sizes
+$content-width :960px;
+$header-height : 60px;
+$footer-height : 200px;
+$thu-height : 160px;
+$col : col-width($columns : 4);
+$last-col : 90px;
+
+//-- other
+
+$contrast : high;
+
+
+$three-clients : gigi;
